@@ -172,10 +172,9 @@ contract NftMarket is ERC721URIStorage, Ownable {
     function _beforeTokenTransfer(
         address from,
         address to,
-        uint256 tokenId,
-        uint256 batchSize
+        uint256 tokenId
     ) internal virtual override {
-        super._beforeTokenTransfer(from, to, tokenId, batchSize);
+        super._beforeTokenTransfer(from, to, tokenId);
 
         if (from == address(0)) {
             _addTokenToAllTokensEnumeration(tokenId);
